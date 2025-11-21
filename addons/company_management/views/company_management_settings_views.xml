@@ -1,0 +1,80 @@
+<!-- addons/company_management/views/company_management_settings_views.xml -->
+<odoo>
+    <!-- Form view -->
+    <record id="view_company_management_settings_form" model="ir.ui.view">
+        <field name="name">company.management.settings.form</field>
+        <field name="model">company.management.settings</field>
+        <field name="arch" type="xml">
+            <form string="Company Management Settings">
+                <sheet>
+                    <group>
+                        <group string="General">
+                            <field name="company_id"/>
+                            <field name="fiscal_year_start"/>
+                            <field name="fiscal_year_end"/>
+                        </group>
+                        <group string="Tax Period / GL">
+                            <field name="tax_period_months"/>
+                            <field name="tax_period_offset_months"/>
+                            <field name="put_alternative_tax_include"/>
+                            <field name="suppress_tax_rates"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Selling Prices">
+                            <group>
+                                <field name="price_basis"/>
+                                <field name="extra_price_percent"/>
+                                <field name="round_to_nearest"/>
+                            </group>
+                        </page>
+
+                        <page string="Optional Modules">
+                            <group>
+                                <field name="enable_manufacturing"/>
+                                <field name="enable_fixed_assets"/>
+                                <field name="use_dimensions"/>
+                            </group>
+                        </page>
+
+                        <page string="User Interface Options">
+                            <group>
+                                <field name="product_search_enabled"/>
+                                <field name="customer_search_enabled"/>
+                                <field name="supplier_search_enabled"/>
+                                <field name="login_timeout_seconds"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_company_management_settings" model="ir.actions.act_window">
+    <field name="name">Company Settings</field>
+    <field name="res_model">company.management.settings</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_company_management_settings_form"/>
+    <field name="target">current</field>
+    <!-- no special context needed, default company_id is handled in the model -->
+</record>
+
+
+    <!-- Menus -->
+    <menuitem
+        id="menu_company_management_root"
+        name="Management"
+        sequence="60"
+    />
+
+    <menuitem
+        id="menu_company_management_settings"
+        name="Company Settings"
+        parent="menu_company_management_root"
+        action="action_company_management_settings"
+        sequence="1"
+    />
+</odoo>

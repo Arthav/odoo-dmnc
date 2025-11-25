@@ -59,6 +59,7 @@
     <field name="view_mode">form</field>
     <field name="view_id" ref="view_company_management_settings_form"/>
     <field name="target">current</field>
+    <field name="context">{}</field>
     <!-- no special context needed, default company_id is handled in the model -->
 </record>
 

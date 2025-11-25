@@ -3,9 +3,9 @@
     "name": "Company Management Settings",
     "version": "1.0.0",
     "summary": "Extra company / GL / price and UI settings (FA-style screen).",
-    "author": "Arth",
+    "author": "BNFN",
     "category": "Settings",
-    "website": "",
+    "website": "http://www.bnfn.my.id",
     "license": "LGPL-3",
     "depends": ["base"],
     "data": [

@@ -9,8 +9,8 @@
         - Pencarian & Laporan
         - Pengaturan
     """,
-    'author': "Arth",
-    'website': "http://www.yourcompany.com",
+    'author': "BNFN",
+    'website': "http://www.bnfn.my.id",
     'category': 'Accounting',
     'version': '0.1',
     'depends': ['base'],

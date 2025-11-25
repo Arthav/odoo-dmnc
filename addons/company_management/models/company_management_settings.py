@@ -91,3 +91,20 @@ class CompanyManagementSettings(models.Model):
         if not settings:
             return default
         return getattr(settings, field_name, default)
+
+    @api.model
+    def action_open_settings(self):
+        """Open the settings form for the current company, creating if needed."""
+        company = self.env.company
+        settings = self.search([('company_id', '=', company.id)], limit=1)
+        if not settings:
+            settings = self.create({'company_id': company.id})
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Company Settings',
+            'res_model': 'company.management.settings',
+            'view_mode': 'form',
+            'res_id': settings.id,
+            'target': 'current',
+        }

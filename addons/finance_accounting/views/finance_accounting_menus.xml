@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Top Level Menu -->
+        <menuitem id="menu_finance_accounting_root"
+                  name="Finance &amp; Accounting"
+                  sequence="10"/>
+
+        <!-- Sub Menus -->
+        <menuitem id="menu_finance_accounting_entry_data"
+                  name="Entry Data"
+                  parent="menu_finance_accounting_root"
+                  sequence="10"/>
+
+        <menuitem id="menu_finance_accounting_reports"
+                  name="Pencarian &amp; Laporan"
+                  parent="menu_finance_accounting_root"
+                  sequence="20"/>
+
+        <menuitem id="menu_finance_accounting_settings"
+                  name="Pengaturan"
+                  parent="menu_finance_accounting_root"
+                  sequence="30"/>
+    </data>
+</odoo>

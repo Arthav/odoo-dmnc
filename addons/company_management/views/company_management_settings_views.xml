@@ -146,7 +146,7 @@
         id="menu_referensi_transaksi"
         name="Referensi transaksi"
         parent="menu_atur_perusahaan"
-        action="action_not_implemented"
+        action="action_company_management_transaction_reference"
         sequence="40"
     />
     <menuitem

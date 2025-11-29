@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_company_management_settings,access_company_management_settings,model_company_management_settings,base.group_system,1,1,1,1
 access_company_management_role,access_company_management_role,model_company_management_role,base.group_system,1,1,1,1
+access_company_management_transaction_reference,access_company_management_transaction_reference,model_company_management_transaction_reference,base.group_system,1,1,1,1

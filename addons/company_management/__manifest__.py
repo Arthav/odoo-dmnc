@@ -12,6 +12,7 @@
         "security/ir.model.access.csv",
         "views/company_management_role_views.xml",
         "views/company_management_user_views.xml",
+        "views/company_management_transaction_reference_views.xml",
         "views/company_management_settings_views.xml",
     ],
     "installable": True,

@@ -10,6 +10,7 @@
     "depends": ["base"],
     "data": [
         "security/ir.model.access.csv",
+        "views/company_management_role_views.xml",
         "views/company_management_settings_views.xml",
     ],
     "installable": True,

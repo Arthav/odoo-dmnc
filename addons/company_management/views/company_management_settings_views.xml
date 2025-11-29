@@ -139,7 +139,7 @@
         id="menu_level_pengguna"
         name="Level pengguna"
         parent="menu_atur_perusahaan"
-        action="action_not_implemented"
+        action="action_company_management_role"
         sequence="30"
     />
     <menuitem

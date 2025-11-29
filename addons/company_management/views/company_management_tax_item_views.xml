@@ -1,0 +1,70 @@
+<odoo>
+    <!-- List View -->
+    <record id="view_company_management_tax_item_list" model="ir.ui.view">
+        <field name="name">company.management.tax.item.list</field>
+        <field name="model">company.management.tax.item</field>
+        <field name="arch" type="xml">
+            <list string="Jenis Pajak" editable="bottom">
+                <field name="name"/>
+                <field name="amount"/>
+                <field name="sales_account_id"/>
+                <field name="purchase_account_id"/>
+                <field name="active" widget="boolean_toggle" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_company_management_tax_item_form" model="ir.ui.view">
+        <field name="name">company.management.tax.item.form</field>
+        <field name="model">company.management.tax.item</field>
+        <field name="arch" type="xml">
+            <form string="Jenis Pajak">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active"/>
+                    <div class="alert alert-info" role="alert">
+                        Untuk menghindari masalah dengan Input jurnal manual, seluruh tipe pajak harus memiliki akun JU Penjualan/Pembelian sendiri.
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="name" string="Keterangan"/>
+                            <label for="amount" string="Harga Patokan"/>
+                            <div class="o_row">
+                                <field name="amount" class="oe_inline"/> %
+                            </div>
+                            <field name="sales_account_id"/>
+                            <field name="purchase_account_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_company_management_tax_item_search" model="ir.ui.view">
+        <field name="name">company.management.tax.item.search</field>
+        <field name="model">company.management.tax.item</field>
+        <field name="arch" type="xml">
+            <search string="Search Tax Item">
+                <field name="name"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_company_management_tax_item" model="ir.actions.act_window">
+        <field name="name">Jenis Pajak</field>
+        <field name="res_model">company.management.tax.item</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Tax Item
+            </p>
+        </field>
+    </record>
+</odoo>

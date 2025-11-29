@@ -5,48 +5,82 @@
         <field name="name">company.management.settings.form</field>
         <field name="model">company.management.settings</field>
         <field name="arch" type="xml">
-            <form string="Company Management Settings">
+            <form string="Atur Perusahaan">
                 <sheet>
-                    <group>
-                        <group string="General">
-                            <field name="company_id"/>
-                            <field name="fiscal_year_start"/>
-                            <field name="fiscal_year_end"/>
-                        </group>
-                        <group string="Tax Period / GL">
-                            <field name="tax_period_months"/>
-                            <field name="tax_period_offset_months"/>
-                            <field name="put_alternative_tax_include"/>
-                            <field name="suppress_tax_rates"/>
-                        </group>
-                    </group>
+                    <div class="o_form_sheet_bg">
+                        <div class="row">
+                            <!-- Left Column: Pengaturan Umum -->
+                            <div class="col-6">
+                                <group string="Pengaturan umum">
+                                    <field name="report_name"/>
+                                    <field name="address"/>
+                                    <field name="domicile"/>
+                                    <field name="phone"/>
+                                    <field name="fax"/>
+                                    <field name="email"/>
+                                    <field name="bcc_email"/>
+                                    <field name="company_reg_no"/>
+                                    <field name="npwp"/>
+                                    <field name="currency_id"/>
+                                    <field name="logo" widget="image" class="oe_avatar"/>
+                                    <field name="new_logo" filename="new_logo_filename"/>
+                                    <field name="delete_logo"/>
+                                    <field name="auto_revalue_currency"/>
+                                    <field name="report_timezone"/>
+                                    <field name="db_scheme_version"/>
+                                </group>
+                            </div>
 
-                    <notebook>
-                        <page string="Selling Prices">
-                            <group>
-                                <field name="price_basis"/>
-                                <field name="extra_price_percent"/>
-                                <field name="round_to_nearest"/>
-                            </group>
-                        </page>
+                            <!-- Right Column: Other Settings -->
+                            <div class="col-6">
+                                <group string="Laporan Buku Besar (GL)">
+                                    <label for="fiscal_year_start" string="Tahun Fiskal"/>
+                                    <div class="o_row">
+                                        <field name="fiscal_year_start" class="oe_inline"/> - 
+                                        <field name="fiscal_year_end" class="oe_inline"/>
+                                    </div>
+                                    <label for="tax_period_months" string="Periode Pajak"/>
+                                    <div class="o_row">
+                                        <field name="tax_period_months" class="oe_inline"/> Bulan
+                                    </div>
+                                    <label for="tax_period_offset_months" string="Periode Akhir Pajak"/>
+                                    <div class="o_row">
+                                        <field name="tax_period_offset_months" class="oe_inline"/> Bulan kebelakang
+                                    </div>
+                                    <field name="put_alternative_tax_include"/>
+                                    <field name="suppress_tax_rates"/>
+                                </group>
 
-                        <page string="Optional Modules">
-                            <group>
-                                <field name="enable_manufacturing"/>
-                                <field name="enable_fixed_assets"/>
-                                <field name="use_dimensions"/>
-                            </group>
-                        </page>
+                                <group string="Harga Jual">
+                                    <field name="price_basis"/>
+                                    <label for="extra_price_percent" string="Tambah Harga dari Biaya Standar"/>
+                                    <div class="o_row">
+                                        <field name="extra_price_percent" class="oe_inline"/> %
+                                    </div>
+                                    <label for="round_to_nearest" string="Round calculated prices to nearest"/>
+                                    <div class="o_row">
+                                        <field name="round_to_nearest" class="oe_inline"/> Sen
+                                    </div>
+                                </group>
 
-                        <page string="User Interface Options">
-                            <group>
-                                <field name="product_search_enabled"/>
-                                <field name="customer_search_enabled"/>
-                                <field name="supplier_search_enabled"/>
-                                <field name="login_timeout_seconds"/>
-                            </group>
-                        </page>
-                    </notebook>
+                                <group string="Optional Modules">
+                                    <field name="enable_manufacturing"/>
+                                    <field name="enable_fixed_assets"/>
+                                    <field name="use_dimensions"/>
+                                </group>
+
+                                <group string="User Interface Options">
+                                    <field name="product_search_enabled" string="Pencarian Daftar Produk &amp; Inventaris"/>
+                                    <field name="customer_search_enabled" string="Pencarian Daftar Customer"/>
+                                    <field name="supplier_search_enabled" string="Pencarian Daftar Supplier"/>
+                                    <label for="login_timeout_seconds" string="Batas waktu Login"/>
+                                    <div class="o_row">
+                                        <field name="login_timeout_seconds" class="oe_inline"/> detik
+                                    </div>
+                                </group>
+                            </div>
+                        </div>
+                    </div>
                 </sheet>
             </form>
         </field>

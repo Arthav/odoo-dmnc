@@ -15,6 +15,31 @@ class CompanyManagementSettings(models.Model):
         ondelete="cascade",
     )
 
+    # --- Pengaturan Umum ---
+    report_name = fields.Char(string="Nama (yang muncul pada laporan)")
+    address = fields.Text(string="Alamat")
+    domicile = fields.Char(string="Domisili")
+    phone = fields.Char(string="No Telepon")
+    fax = fields.Char(string="No Fax")
+    email = fields.Char(string="Alamat Email")
+    bcc_email = fields.Char(string="Alamat BCC untuk seluruh mail yang dikirimkan")
+    company_reg_no = fields.Char(string="Nomer Registrasi Perusahaan")
+    npwp = fields.Char(string="NPWP")
+    
+    currency_id = fields.Many2one(
+        "res.currency", 
+        string="Kurs yang digunakan",
+        default=lambda self: self.env.company.currency_id
+    )
+    
+    logo = fields.Binary(string="Logo Perusahaan")
+    new_logo = fields.Binary(string="Logo Perusahaan Baru (.jpg)")
+    delete_logo = fields.Boolean(string="Hapus Logo Perusahaan")
+    
+    auto_revalue_currency = fields.Boolean(string="Revaluasi Otomatis Akun Kurs")
+    report_timezone = fields.Boolean(string="Zona Waktu pada Laporan")
+    db_scheme_version = fields.Char(string="Database Scheme Version", default="2.4.1", readonly=True)
+
     # --- Laporan Buku Besar (GL) ---
     fiscal_year_start = fields.Date(string="Fiscal Year Start")
     fiscal_year_end = fields.Date(string="Fiscal Year End")
@@ -56,9 +81,14 @@ class CompanyManagementSettings(models.Model):
     )
 
     # --- Optional Modules ---
-    enable_manufacturing = fields.Boolean(string="Manufacturing")
+    # --- Optional Modules ---
+    enable_manufacturing = fields.Boolean(string="Manufaktur")
     enable_fixed_assets = fields.Boolean(string="Fixed Assets")
-    use_dimensions = fields.Boolean(string="Use Dimensions")
+    use_dimensions = fields.Selection(
+        [('0', '0'), ('1', '1'), ('2', '2'), ('3', '3')],
+        string="Gunakan Dimensi",
+        default='0'
+    )
 
     # --- User Interface Options ---
     product_search_enabled = fields.Boolean(string="Search Product & Inventory")

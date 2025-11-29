@@ -1,0 +1,93 @@
+<odoo>
+    <!-- List View -->
+    <record id="view_company_management_user_list" model="ir.ui.view">
+        <field name="name">company.management.user.list</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <list string="User Accounts">
+                <field name="login"/>
+                <field name="name"/>
+                <field name="company_role_id"/>
+                <field name="email"/>
+                <field name="phone"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_company_management_user_form" model="ir.ui.view">
+        <field name="name">company.management.user.form</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <form string="Akun Pengguna">
+                <sheet>
+                    <style>
+                        .user-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            border: 1px solid #dee2e6;
+                        }
+                        .user-row {
+                            border-bottom: 1px solid #dee2e6;
+                        }
+                        .user-label {
+                            background-color: #f0f4f8;
+                            padding: 10px;
+                            width: 30%;
+                            font-weight: bold;
+                            border-right: 1px solid #dee2e6;
+                        }
+                        .user-value {
+                            padding: 10px;
+                            width: 70%;
+                        }
+                        .user-value input {
+                            width: 100%;
+                        }
+                    </style>
+                    <div class="user-table">
+                        <div class="user-row d-flex">
+                            <div class="user-label">Login Pengguna:</div>
+                            <div class="user-value"><field name="login" nolabel="1"/></div>
+                        </div>
+                        <div class="user-row d-flex">
+                            <div class="user-label">Kata kunci:</div>
+                            <div class="user-value"><field name="password" password="True" nolabel="1"/></div>
+                        </div>
+                        <div class="user-row d-flex">
+                            <div class="user-label">Nama Lengkap:</div>
+                            <div class="user-value"><field name="name" nolabel="1"/></div>
+                        </div>
+                        <div class="user-row d-flex">
+                            <div class="user-label">No Telepon:</div>
+                            <div class="user-value"><field name="phone" nolabel="1"/></div>
+                        </div>
+                        <div class="user-row d-flex">
+                            <div class="user-label">Alamat Email:</div>
+                            <div class="user-value"><field name="email" nolabel="1"/></div>
+                        </div>
+                        <div class="user-row d-flex" style="border-bottom: none;">
+                            <div class="user-label">Level Akses:</div>
+                            <div class="user-value"><field name="company_role_id" nolabel="1"/></div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_company_management_user" model="ir.actions.act_window">
+        <field name="name">Akun Pengguna</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_company_management_user_list')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('view_company_management_user_form')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new User Account
+            </p>
+        </field>
+    </record>
+</odoo>

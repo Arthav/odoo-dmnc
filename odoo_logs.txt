@@ -1,0 +1,581 @@
+﻿docker :     return 
+create(self, arg)
+At line:1 char:1
++ docker logs odoo-web 
+--tail 200 2>&1 | Out-File 
+-Encoding utf8 odoo_l ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (    r  
+  eturn create(self, arg)   
+ :String) [], RemoteExce    
+ption
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4982, in create
+    new_vals_list = self._pr
+epare_create_values(vals_lis
+t)
+                    ^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 5125, in 
+_prepare_create_values
+    vals = self._add_missing
+_default_values(vals)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 1929, in 
+_add_missing_default_values
+    defaults = self.default_
+get(missing_defaults)
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 1653, in default_get
+    ir_defaults = self.env['
+ir.default']._get_model_defa
+ults(self._name)
+                  ^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/decorator.py", 
+line 232, in fun
+    return caller(func, 
+*(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/tools/cache.
+py", line 101, in lookup
+    key = key0 + 
+self.key(*args, **kwargs)
+                 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, 
+in <lambda>
+  File "/usr/lib/python3/dis
+t-packages/odoo/tools/func.p
+y", line 42, in __get__
+    value = self.fget(obj)
+            ^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 722, in company
+    return self.user.company
+_id.with_env(self)
+           
+^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/fields.py", 
+line 3069, in __get__
+    return 
+super().__get__(records, 
+owner)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/fields.py", 
+line 1266, in __get__
+    recs._fetch_field(self)
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4115, in _fetch_field
+    self.fetch(fnames)
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4153, in fetch
+    fetched = 
+self._fetch_query(query, 
+fields_to_fetch)
+              ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/res_users.py", line 
+573, in _fetch_query
+    records = 
+super()._fetch_query(query, 
+fields)
+              ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4240, in _fetch_query
+    rows = self.env.execute_
+query(query.select(*sql_term
+s))
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 993, in execute_query
+    self.cr.execute(query)
+  File "/usr/lib/python3/dis
+t-packages/odoo/sql_db.py", 
+line 357, in execute
+    res = 
+self._obj.execute(query, 
+params)
+          ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedCol
+umn: column 
+res_users.company_role_id 
+does not exist
+LINE 1: 
+...res_users"."write_uid", 
+"res_users"."write_date", 
+"res_users...
+                            
+                            
+     ^
+
+2025-11-29 13:19:00,374 1 
+ERROR erpdmnc odoo.sql_db: 
+bad query: b'SELECT 
+"res_users"."id", 
+"res_users"."partner_id", 
+"res_users"."login", 
+"res_users"."signature", 
+"res_users"."active", 
+"res_users"."action_id", 
+"res_users"."share", 
+"res_users"."company_id", 
+"res_users"."create_uid", 
+"res_users"."create_date", 
+"res_users"."write_uid", 
+"res_users"."write_date", "r
+es_users"."company_role_id",
+ 
+"res_users"."tour_enabled", 
+"res_users"."notification_ty
+pe", "res_users"."odoobot_st
+ate", "res_users"."odoobot_f
+ailed", 
+"res_users"."sale_team_id" 
+FROM "res_users" WHERE 
+("res_users"."id" IN (1))'
+ERROR: column 
+res_users.company_role_id 
+does not exist
+LINE 1: 
+...res_users"."write_uid", 
+"res_users"."write_date", 
+"res_users...
+                            
+                            
+     ^
+ 
+2025-11-29 13:19:00,375 1 
+WARNING ? 
+odoo.service.server: cron0 
+encountered an Exception: 
+Traceback (most recent call 
+last):
+  File "/usr/lib/python3/dis
+t-packages/odoo/service/serv
+er.py", line 516, in 
+_run_cron
+    ir_cron._process_jobs(db
+_name)
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+152, in _process_jobs
+    registry[cls._name]._pro
+cess_job(db, cron_cr, job)
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+367, in _process_job
+    status = 
+cls._run_job(job)
+             
+^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+422, in _run_job
+    cron, progress = cron._a
+dd_progress(timed_out_counte
+r=timed_out_counter)
+                     ^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+724, in _add_progress
+    progress = self.env['ir.
+cron.progress'].sudo().creat
+e([{
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^
+  File "<decorator-gen-0>", 
+line 2, in create
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 498, in 
+_model_create_multi
+    return create(self, arg)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4982, in create
+    new_vals_list = self._pr
+epare_create_values(vals_lis
+t)
+                    ^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 5125, in 
+_prepare_create_values
+    vals = self._add_missing
+_default_values(vals)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 1929, in 
+_add_missing_default_values
+    defaults = self.default_
+get(missing_defaults)
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 1653, in default_get
+    ir_defaults = self.env['
+ir.default']._get_model_defa
+ults(self._name)
+                  ^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/decorator.py", 
+line 232, in fun
+    return caller(func, 
+*(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/tools/cache.
+py", line 101, in lookup
+    key = key0 + 
+self.key(*args, **kwargs)
+                 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, 
+in <lambda>
+  File "/usr/lib/python3/dis
+t-packages/odoo/tools/func.p
+y", line 42, in __get__
+    value = self.fget(obj)
+            ^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 722, in company
+    return self.user.company
+_id.with_env(self)
+           
+^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/fields.py", 
+line 3069, in __get__
+    return 
+super().__get__(records, 
+owner)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/fields.py", 
+line 1266, in __get__
+    recs._fetch_field(self)
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4115, in _fetch_field
+    self.fetch(fnames)
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4153, in fetch
+    fetched = 
+self._fetch_query(query, 
+fields_to_fetch)
+              ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/res_users.py", line 
+573, in _fetch_query
+    records = 
+super()._fetch_query(query, 
+fields)
+              ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4240, in _fetch_query
+    rows = self.env.execute_
+query(query.select(*sql_term
+s))
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 993, in execute_query
+    self.cr.execute(query)
+  File "/usr/lib/python3/dis
+t-packages/odoo/sql_db.py", 
+line 357, in execute
+    res = 
+self._obj.execute(query, 
+params)
+          ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedCol
+umn: column 
+res_users.company_role_id 
+does not exist
+LINE 1: 
+...res_users"."write_uid", 
+"res_users"."write_date", 
+"res_users...
+                            
+                            
+     ^
+
+2025-11-29 13:19:08,510 1 
+ERROR erpdmnc odoo.sql_db: 
+bad query: b'SELECT 
+"res_users"."id", 
+"res_users"."partner_id", 
+"res_users"."login", 
+"res_users"."signature", 
+"res_users"."active", 
+"res_users"."action_id", 
+"res_users"."share", 
+"res_users"."company_id", 
+"res_users"."create_uid", 
+"res_users"."create_date", 
+"res_users"."write_uid", 
+"res_users"."write_date", "r
+es_users"."company_role_id",
+ 
+"res_users"."tour_enabled", 
+"res_users"."notification_ty
+pe", "res_users"."odoobot_st
+ate", "res_users"."odoobot_f
+ailed", 
+"res_users"."sale_team_id" 
+FROM "res_users" WHERE 
+("res_users"."id" IN (1))'
+ERROR: column 
+res_users.company_role_id 
+does not exist
+LINE 1: 
+...res_users"."write_uid", 
+"res_users"."write_date", 
+"res_users...
+                            
+                            
+     ^
+ 
+2025-11-29 13:19:08,511 1 
+WARNING ? 
+odoo.service.server: cron1 
+encountered an Exception: 
+Traceback (most recent call 
+last):
+  File "/usr/lib/python3/dis
+t-packages/odoo/service/serv
+er.py", line 516, in 
+_run_cron
+    ir_cron._process_jobs(db
+_name)
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+152, in _process_jobs
+    registry[cls._name]._pro
+cess_job(db, cron_cr, job)
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+367, in _process_job
+    status = 
+cls._run_job(job)
+             
+^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+422, in _run_job
+    cron, progress = cron._a
+dd_progress(timed_out_counte
+r=timed_out_counter)
+                     ^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/ir_cron.py", line 
+724, in _add_progress
+    progress = self.env['ir.
+cron.progress'].sudo().creat
+e([{
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^
+  File "<decorator-gen-0>", 
+line 2, in create
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 498, in 
+_model_create_multi
+    return create(self, arg)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4982, in create
+    new_vals_list = self._pr
+epare_create_values(vals_lis
+t)
+                    ^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 5125, in 
+_prepare_create_values
+    vals = self._add_missing
+_default_values(vals)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 1929, in 
+_add_missing_default_values
+    defaults = self.default_
+get(missing_defaults)
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 1653, in default_get
+    ir_defaults = self.env['
+ir.default']._get_model_defa
+ults(self._name)
+                  ^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/decorator.py", 
+line 232, in fun
+    return caller(func, 
+*(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/tools/cache.
+py", line 101, in lookup
+    key = key0 + 
+self.key(*args, **kwargs)
+                 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, 
+in <lambda>
+  File "/usr/lib/python3/dis
+t-packages/odoo/tools/func.p
+y", line 42, in __get__
+    value = self.fget(obj)
+            ^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 722, in company
+    return self.user.company
+_id.with_env(self)
+           
+^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/fields.py", 
+line 3069, in __get__
+    return 
+super().__get__(records, 
+owner)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/fields.py", 
+line 1266, in __get__
+    recs._fetch_field(self)
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4115, in _fetch_field
+    self.fetch(fnames)
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4153, in fetch
+    fetched = 
+self._fetch_query(query, 
+fields_to_fetch)
+              ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/addons/base/
+models/res_users.py", line 
+573, in _fetch_query
+    records = 
+super()._fetch_query(query, 
+fields)
+              ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/models.py", 
+line 4240, in _fetch_query
+    rows = self.env.execute_
+query(query.select(*sql_term
+s))
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^
+  File "/usr/lib/python3/dis
+t-packages/odoo/api.py", 
+line 993, in execute_query
+    self.cr.execute(query)
+  File "/usr/lib/python3/dis
+t-packages/odoo/sql_db.py", 
+line 357, in execute
+    res = 
+self._obj.execute(query, 
+params)
+          ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedCol
+umn: column 
+res_users.company_role_id 
+does not exist
+LINE 1: 
+...res_users"."write_uid", 
+"res_users"."write_date", 
+"res_users...
+                            
+                            
+     ^
+

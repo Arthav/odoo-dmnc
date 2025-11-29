@@ -132,7 +132,7 @@
         id="menu_akun_pengguna"
         name="Akun Pengguna"
         parent="menu_atur_perusahaan"
-        action="action_not_implemented"
+        action="action_company_management_user"
         sequence="20"
     />
     <menuitem

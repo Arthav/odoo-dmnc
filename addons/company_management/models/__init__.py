@@ -1,2 +1,3 @@
 from . import company_management_settings
 from . import company_management_role
+from . import res_users

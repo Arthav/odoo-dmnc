@@ -1,6 +1,6 @@
 # addons/company_management/__manifest__.py
 {
-    "name": "Company Management Settings",
+    "name": "DMNC Company Management Settings",
     "version": "1.0.0",
     "summary": "Extra company / GL / price and UI settings (FA-style screen).",
     "author": "BNFN",

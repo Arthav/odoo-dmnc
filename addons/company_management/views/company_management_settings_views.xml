@@ -62,6 +62,16 @@
     </record>
 
 
+    <!-- Placeholder Action for Not Implemented Menus -->
+    <record id="action_not_implemented" model="ir.actions.server">
+        <field name="name">Not Implemented</field>
+        <field name="model_id" ref="model_company_management_settings"/>
+        <field name="state">code</field>
+        <field name="code">
+            raise UserError("This feature is not yet implemented.")
+        </field>
+    </record>
+
     <!-- Menus -->
     <menuitem
         id="menu_company_management_root"
@@ -69,11 +79,126 @@
         sequence="60"
     />
 
+    <!-- 1. Atur Perusahaan -->
     <menuitem
-        id="menu_company_management_settings"
-        name="Company Settings"
+        id="menu_atur_perusahaan"
+        name="Atur Perusahaan"
         parent="menu_company_management_root"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_pengaturan_perusahaan"
+        name="Pengaturan perusahaan"
+        parent="menu_atur_perusahaan"
         action="action_company_management_settings"
-        sequence="1"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_akun_pengguna"
+        name="Akun Pengguna"
+        parent="menu_atur_perusahaan"
+        action="action_not_implemented"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_level_pengguna"
+        name="Level pengguna"
+        parent="menu_atur_perusahaan"
+        action="action_not_implemented"
+        sequence="30"
+    />
+    <menuitem
+        id="menu_referensi_transaksi"
+        name="Referensi transaksi"
+        parent="menu_atur_perusahaan"
+        action="action_not_implemented"
+        sequence="40"
+    />
+    <menuitem
+        id="menu_item_pajak"
+        name="Item pajak"
+        parent="menu_atur_perusahaan"
+        action="action_not_implemented"
+        sequence="50"
+    />
+    <menuitem
+        id="menu_group_pajak"
+        name="Group pajak"
+        parent="menu_atur_perusahaan"
+        action="action_not_implemented"
+        sequence="60"
+    />
+    <menuitem
+        id="menu_jenis_pajak_barang"
+        name="Jenis Pajak Barang"
+        parent="menu_atur_perusahaan"
+        action="action_not_implemented"
+        sequence="70"
+    />
+    <menuitem
+        id="menu_tahun_fiskal"
+        name="Tahun Fiskal"
+        parent="menu_atur_perusahaan"
+        action="action_not_implemented"
+        sequence="80"
+    />
+
+    <!-- 2. Lain-lain -->
+    <menuitem
+        id="menu_lain_lain"
+        name="Lain-lain"
+        parent="menu_company_management_root"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_termin_pembayaran"
+        name="Termin pembayaran"
+        parent="menu_lain_lain"
+        action="action_not_implemented"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_perusahaan_pengiriman"
+        name="Perusahaan pengiriman"
+        parent="menu_lain_lain"
+        action="action_not_implemented"
+        sequence="20"
+    />
+    <menuitem
+        id="menu_point_of_sale"
+        name="Point of sale"
+        parent="menu_lain_lain"
+        action="action_not_implemented"
+        sequence="30"
+    />
+    <menuitem
+        id="menu_kategori_kontak"
+        name="Kategori kontak"
+        parent="menu_lain_lain"
+        action="action_not_implemented"
+        sequence="40"
+    />
+
+    <!-- 3. Pengaturan -->
+    <menuitem
+        id="menu_pengaturan_root"
+        name="Pengaturan"
+        parent="menu_company_management_root"
+        sequence="30"
+    />
+    <menuitem
+        id="menu_void_transaksi"
+        name="Void transaksi"
+        parent="menu_pengaturan_root"
+        action="action_not_implemented"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_backup_database"
+        name="Backup database"
+        parent="menu_pengaturan_root"
+        action="action_not_implemented"
+        sequence="20"
     />
 </odoo>

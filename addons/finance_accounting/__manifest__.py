@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Finance & Accounting",
+    'name': "DMNC Finance & Accounting",
     'summary': """
         Finance and Accounting Module for DMNC""",
     'description': """

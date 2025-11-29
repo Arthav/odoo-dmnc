@@ -174,7 +174,7 @@
         id="menu_tahun_fiskal"
         name="Tahun Fiskal"
         parent="menu_atur_perusahaan"
-        action="action_not_implemented"
+        action="action_company_management_fiscal_year"
         sequence="80"
     />
 

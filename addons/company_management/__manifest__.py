@@ -16,6 +16,7 @@
         "views/company_management_tax_item_views.xml",
         "views/company_management_tax_group_views.xml",
         "views/company_management_goods_tax_type_views.xml",
+        "views/company_management_fiscal_year_views.xml",
         "views/company_management_settings_views.xml",
     ],
     "installable": True,

@@ -1,0 +1,50 @@
+<odoo>
+    <!-- List View -->
+    <record id="view_company_management_fiscal_year_list" model="ir.ui.view">
+        <field name="name">company.management.fiscal.year.list</field>
+        <field name="model">company.management.fiscal.year</field>
+        <field name="arch" type="xml">
+            <list string="Tahun Fiskal" editable="bottom">
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="is_closed"/>
+                <field name="active" widget="boolean_toggle" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_company_management_fiscal_year_form" model="ir.ui.view">
+        <field name="name">company.management.fiscal.year.form</field>
+        <field name="model">company.management.fiscal.year</field>
+        <field name="arch" type="xml">
+            <form string="Tahun Fiskal">
+                <sheet>
+                    <div class="alert alert-danger" role="alert" style="color: red;">
+                        PERINGATAN: Jika menghapus tahun fiskal, seluruh transaksi akan dihapus dan dikonversi ke saldo yang relevan. Proses ini tidak dapat dibalik!
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="is_closed"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_company_management_fiscal_year" model="ir.actions.act_window">
+        <field name="name">Tahun Fiskal</field>
+        <field name="res_model">company.management.fiscal.year</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Fiscal Year
+            </p>
+        </field>
+    </record>
+</odoo>

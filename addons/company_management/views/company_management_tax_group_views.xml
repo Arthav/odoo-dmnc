@@ -1,0 +1,49 @@
+<odoo>
+    <!-- List View -->
+    <record id="view_company_management_tax_group_list" model="ir.ui.view">
+        <field name="name">company.management.tax.group.list</field>
+        <field name="model">company.management.tax.group</field>
+        <field name="arch" type="xml">
+            <list string="Group Pajak">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_company_management_tax_group_form" model="ir.ui.view">
+        <field name="name">company.management.tax.group.form</field>
+        <field name="model">company.management.tax.group</field>
+        <field name="arch" type="xml">
+            <form string="Group Pajak">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <div class="text-center mt-4 mb-2">
+                        <strong>Pilih pajak yang termasuk dalam grup ini.</strong>
+                    </div>
+                    <field name="line_ids">
+                        <list editable="bottom">
+                            <field name="tax_item_id"/>
+                            <field name="is_main_tax" widget="boolean_toggle"/>
+                            <field name="is_shipping_tax" widget="boolean_toggle"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_company_management_tax_group" model="ir.actions.act_window">
+        <field name="name">Group Pajak</field>
+        <field name="res_model">company.management.tax.group</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Tax Group
+            </p>
+        </field>
+    </record>
+</odoo>

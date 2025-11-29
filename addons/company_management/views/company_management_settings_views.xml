@@ -160,7 +160,7 @@
         id="menu_group_pajak"
         name="Group pajak"
         parent="menu_atur_perusahaan"
-        action="action_not_implemented"
+        action="action_company_management_tax_group"
         sequence="60"
     />
     <menuitem

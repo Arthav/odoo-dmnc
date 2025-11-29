@@ -14,6 +14,7 @@
         "views/company_management_user_views.xml",
         "views/company_management_transaction_reference_views.xml",
         "views/company_management_tax_item_views.xml",
+        "views/company_management_tax_group_views.xml",
         "views/company_management_settings_views.xml",
     ],
     "installable": True,

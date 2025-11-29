@@ -167,7 +167,7 @@
         id="menu_jenis_pajak_barang"
         name="Jenis Pajak Barang"
         parent="menu_atur_perusahaan"
-        action="action_not_implemented"
+        action="action_company_management_goods_tax_type"
         sequence="70"
     />
     <menuitem

@@ -1,0 +1,51 @@
+<odoo>
+    <!-- List View -->
+    <record id="view_company_management_pos_setting_list" model="ir.ui.view">
+        <field name="name">company.management.pos.setting.list</field>
+        <field name="model">company.management.pos.setting</field>
+        <field name="arch" type="xml">
+            <list string="Pengaturan titik penjualan (Point Of Sales)" editable="bottom">
+                <field name="name"/>
+                <field name="allow_credit_sales" string="Penjualan kredit"/>
+                <field name="allow_cash_sales" string="Penjualan cash"/>
+                <field name="location_id" string="Lokasi"/>
+                <field name="default_cash_account_id" string="Akun kas default"/>
+                <field name="active" widget="boolean_toggle" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_company_management_pos_setting_form" model="ir.ui.view">
+        <field name="name">company.management.pos.setting.form</field>
+        <field name="model">company.management.pos.setting</field>
+        <field name="arch" type="xml">
+            <form string="Pengaturan titik penjualan (Point Of Sales)">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="name"/>
+                            <field name="allow_credit_sales"/>
+                            <field name="allow_cash_sales"/>
+                            <field name="default_cash_account_id"/>
+                            <field name="location_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_company_management_pos_setting" model="ir.actions.act_window">
+        <field name="name">Pengaturan titik penjualan (Point Of Sales)</field>
+        <field name="res_model">company.management.pos.setting</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new POS Setting
+            </p>
+        </field>
+    </record>
+</odoo>

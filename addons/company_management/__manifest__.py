@@ -7,7 +7,7 @@
     "category": "Settings",
     "website": "http://www.bnfn.my.id",
     "license": "LGPL-3",
-    "depends": ["base", "account"],
+    "depends": ["base", "account", "stock"],
     "data": [
         "security/ir.model.access.csv",
         "views/company_management_role_views.xml",
@@ -19,6 +19,7 @@
         "views/company_management_fiscal_year_views.xml",
         "views/company_management_payment_term_views.xml",
         "views/company_management_shipping_company_views.xml",
+        "views/company_management_pos_setting_views.xml",
         "views/company_management_settings_views.xml",
     ],
     "installable": True,

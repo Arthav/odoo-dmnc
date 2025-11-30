@@ -8,3 +8,4 @@ from . import company_management_goods_tax_type
 from . import company_management_fiscal_year
 from . import company_management_payment_term
 from . import company_management_shipping_company
+from . import company_management_pos_setting

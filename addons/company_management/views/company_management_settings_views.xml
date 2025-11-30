@@ -200,10 +200,10 @@
         sequence="20"
     />
     <menuitem
-        id="menu_point_of_sale"
-        name="Point of sale"
+        id="menu_pengaturan_pos"
+        name="Pengaturan titik penjualan (Point Of Sales)"
         parent="menu_lain_lain"
-        action="action_not_implemented"
+        action="action_company_management_pos_setting"
         sequence="30"
     />
     <menuitem

@@ -196,7 +196,7 @@
         id="menu_perusahaan_pengiriman"
         name="Perusahaan pengiriman"
         parent="menu_lain_lain"
-        action="action_not_implemented"
+        action="action_company_management_shipping_company"
         sequence="20"
     />
     <menuitem

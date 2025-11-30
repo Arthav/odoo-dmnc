@@ -6,3 +6,4 @@ from . import company_management_tax_item
 from . import company_management_tax_group
 from . import company_management_goods_tax_type
 from . import company_management_fiscal_year
+from . import company_management_payment_term

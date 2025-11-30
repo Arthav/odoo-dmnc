@@ -189,7 +189,7 @@
         id="menu_termin_pembayaran"
         name="Termin pembayaran"
         parent="menu_lain_lain"
-        action="action_not_implemented"
+        action="action_company_management_payment_term"
         sequence="10"
     />
     <menuitem
